@@ -6,8 +6,7 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 
 ### Milestone 0
 
-- Progettare la struttura del global state sulla linea degli esercizi svolti nei giorni
-  precedenti.
+- Progettare la struttura del global state sulla linea degli esercizi svolti nei giorni precedenti.
 
 ### Milestone 1
 
