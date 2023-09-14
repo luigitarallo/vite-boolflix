@@ -1,11 +1,32 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      searchedTerm: "",
+    };
   },
 };
 </script>
 
-<template></template>
+<template>
+  <header class="container">
+    <div class="input-group mb-3">
+      <input
+        v-model="searchedTerm"
+        type="text"
+        class="form-control"
+        placeholder=""
+        aria-describedby="button-addon2"
+      />
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        id="button-addon2"
+      >
+        Search
+      </button>
+    </div>
+  </header>
+</template>
 
 <style lang="scss"></style>
