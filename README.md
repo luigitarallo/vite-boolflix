@@ -81,4 +81,5 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 ### Milestone 1
 
 - Creo una searchbar nell'_AppHeader_
-  - la collego con una direttiva v-model perché mi servirà sapere cosa viene scritto nell'imput
+  - la collego con una direttiva v-model perché mi servirà sapere cosa viene scritto nell'input
+- Per inviare il parametro ricercato al genitore (_App_), avrò bisogno di un emit che verrà inviato al click del tasto
