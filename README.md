@@ -76,3 +76,9 @@ Replica della più famosa piattaforma streaming di film e serie TV!
     - _MovieList_ avrà a sua volta un altro componente per creare la card _MediaCard_
       - Lo esporto e registro nel genitore
     - Creo uno store utile per salvare i dati richiesti tramite API in modo da renderli disponibili anche per altri componenti
+      - Importo lo store nell'App principale _App_
+
+### Milestone 1
+
+- Creo una searchbar nell'_AppHeader_
+  - la collego con una direttiva v-model perché mi servirà sapere cosa viene scritto nell'imput
