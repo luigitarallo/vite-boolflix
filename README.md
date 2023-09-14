@@ -68,5 +68,11 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 
 - Installo tutto il necessario per il corretto funzionamento di vue e vite
 - Organizzo l'applicazione:
-  - Creo dei componenti secondari per l'header ed il main
-  - Li importo e registro nell'app principale
+
+  - Creo dei componenti secondari per l'header ed il main (_AppMain_,_AppHeader_)
+  - Li importo e registro nell'App principale
+  - Creo un componente _MovieList_ che si interfaccerà solo con _AppMain_ che conterrà la lista dei film e serie TV
+    - Lo importo e registro nell'App genitore
+    - _MovieList_ avrà a sua volta un altro componente per creare la card _MediaCard_
+      - Lo esporto e registro nel genitore
+    - Creo uno store utile per salvare i dati richiesti tramite API in modo da renderli disponibili anche per altri componenti
