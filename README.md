@@ -1,6 +1,6 @@
 # BoolFlix
 
-## Traccia
+## TRACCIA
 
 Replica della più famosa piattaforma streaming di film e serie TV!
 
@@ -61,3 +61,12 @@ Replica della più famosa piattaforma streaming di film e serie TV!
     la poster_path con w342)
   - Andando con il mouse sopra una card (on hover), appaiono le informazioni
     aggiuntive già prese nei punti precedenti più la overview
+
+## SVOLGIMENTO
+
+### Milestone 0
+
+- Installo tutto il necessario per il corretto funzionamento di vue e vite
+- Organizzo l'applicazione:
+  - Creo dei componenti secondari per l'header ed il main
+  - Li importo e registro nell'app principale
