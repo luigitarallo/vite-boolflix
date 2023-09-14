@@ -5,6 +5,7 @@ export default {
       searchedTerm: "",
     };
   },
+  emits: ["searchWords"],
 };
 </script>
 
@@ -19,6 +20,7 @@ export default {
         aria-describedby="button-addon2"
       />
       <button
+        @click="$emit('searchWords', searchedTerm)"
         class="btn btn-outline-secondary"
         type="button"
         id="button-addon2"
