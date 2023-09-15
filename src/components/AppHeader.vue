@@ -14,6 +14,7 @@ export default {
     <div class="input-group mb-3">
       <input
         v-model="searchedTerm"
+        @keyup.enter="$emit('searchWords', searchedTerm)"
         type="text"
         class="form-control"
         placeholder=""
