@@ -1,11 +1,19 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      text: "Example Card",
+    };
   },
 };
 </script>
 
-<template></template>
+<template>
+  <div class="card">
+    <div class="card-body">
+      {{ text }}
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped></style>
