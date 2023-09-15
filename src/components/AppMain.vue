@@ -1,13 +1,13 @@
 <script>
-import MovieList from "./baseComponents/MovieList.vue";
+import Medialist from "./baseComponents/Medialist.vue";
 export default {
   data() {
     return {};
   },
-  components: { MovieList },
+  components: { Medialist },
 };
 </script>
 
-<template><MovieList /></template>
+<template><Medialist /></template>
 
 <style lang="scss" scoped></style>
