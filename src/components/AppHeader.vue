@@ -2,10 +2,10 @@
 export default {
   data() {
     return {
-      searchedTerm: "",
+      searched: "",
     };
   },
-  emits: ["searchWords"],
+  emits: ["search-words"],
 };
 </script>
 
@@ -13,15 +13,15 @@ export default {
   <header class="container">
     <div class="input-group mb-3">
       <input
-        v-model="searchedTerm"
-        @keyup.enter="$emit('searchWords', searchedTerm)"
+        v-model="searched"
+        @keyup.enter="$emit('search-words', searched)"
         type="text"
         class="form-control"
         placeholder=""
         aria-describedby="button-addon2"
       />
       <button
-        @click="$emit('searchWords', searchedTerm)"
+        @click="$emit('search-words', searched)"
         class="btn btn-outline-secondary"
         type="button"
         id="button-addon2"
