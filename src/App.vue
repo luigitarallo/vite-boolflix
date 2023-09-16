@@ -1,16 +1,13 @@
 <script>
 import axios from "axios";
 import { store } from "./data/store";
+
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
+
 const api = "8fa93795453909bcada8baee1989bfa4";
 
 export default {
-  data() {
-    return {
-      store,
-    };
-  },
   components: { AppHeader, AppMain },
 
   methods: {
@@ -23,7 +20,22 @@ export default {
           },
         })
         .then((response) => {
-          this.store = response.data.results;
+          store.movies = response.data.results.map((movie) => {
+            const {
+              title,
+              original_title,
+              original_language,
+              vote_average,
+              id,
+            } = movie;
+            return {
+              name: title,
+              original_title,
+              language: original_language,
+              vote: Math.ceil(vote_average / 2),
+              id,
+            };
+          });
         });
     },
   },
