@@ -13,7 +13,12 @@ export default {
 </script>
 
 <template>
-  <MediaCard :store="store" />
+  <MediaCard
+    v-for="movie in store.movies"
+    :key="movie.id"
+    class="card"
+    :cardInfo="movie"
+  />
 </template>
 
 <style lang="scss" scoped></style>

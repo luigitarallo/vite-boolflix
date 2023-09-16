@@ -5,17 +5,14 @@ export default {
       text: "Example Card",
     };
   },
-  props: { store: Object },
+  props: { cardInfo: Object },
 };
 </script>
 
 <template>
-  <div v-for="movie in store.movies" :key="movie.id" class="card">
-    <div class="card-body">
-      {{ movie.name }} - {{ movie.original_title }} - {{ movie.language }} -
-      {{ movie.vote }} -
-      {{ movie.id }}
-    </div>
+  <div class="card-body">
+    {{ cardInfo.name }} - {{ cardInfo.original_title }} -
+    {{ cardInfo.language }} - {{ cardInfo.vote }}
   </div>
 </template>
 
