@@ -86,3 +86,8 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 - L'_emit_ arriva al genitore che scatena un metodo
   - Tramite _axios_ viene inviata una ricerca sul database contenente il parametro inserito nell'input
   - Costruisco il link per la ricerca utilizzando la _chiave api_ personale e la _parola_ da ricercare
+  - salvo i valori ricevuti con chiavi personalizzate nello _store_ creato precedentemente
+- Nell'app che deve contenere le card, importo lo store con i dati e **PER OGNI** risultato ricevuto stampo una card
+- Invio i dati dello store tramite _props_ all'app figlia che si occuperà di creare solamente la card e visualizzare i dati ricevuti
+
+### Milestone 2
