@@ -82,4 +82,7 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 
 - Creo una searchbar nell'_AppHeader_
   - la collego con una direttiva v-model perché mi servirà sapere cosa viene scritto nell'input
-- Per inviare il parametro ricercato al genitore (_App_), avrò bisogno di un emit che verrà inviato al click del tasto
+- Per inviare il parametro ricercato al genitore (_App_), avrò bisogno di un emit che verrà inviato al click del button o alla pressione del tasto Enter nell'input
+- L'_emit_ arriva al genitore che scatena un metodo
+  - Tramite _axios_ viene inviata una ricerca sul database contenente il parametro inserito nell'input
+  - Costruisco il link per la ricerca utilizzando la _chiave api_ personale e la _parola_ da ricercare
