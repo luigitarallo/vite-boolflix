@@ -91,3 +91,7 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 - Invio i dati dello store tramite _props_ all'app figlia che si occuperà di creare solamente la card e visualizzare i dati ricevuti
 
 ### Milestone 2
+
+- Creo un database con le bandiere più comuni per le lingue
+- Dichiaro un oggetto con al suo interno una chiava che sarà la lingua del film e come valore un percorso al database con la bandiera corrispondete
+-
