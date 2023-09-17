@@ -99,3 +99,8 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 - Quando invoco il metodo per ricercare i film, creo un'altra chiamata per ricercare le serie
 - salvo i dati in un secondo array di oggetti nello storage
 - Nell'app _MediaList_ registro un secondo componente _MediaCard_ e **PER OGNI** oggetto nell'array stamperà una card, i dati da stampare li invio tramite la stessa props ma con dati _serie_ differenti
+
+### Milestone 3
+
+- Per poter stampare la compertina del film o serie tv, aggiungo una nuova chiave all'oggetto che mappo quando faccio la richiesta axios. Questa chiave conterrà il link parziale dell'immagine
+- Quando ritorno l'array con le chiavi cambiate, a quella dell'immagine aggiungo anche l'url rimanente per visualizzare correttamente il file alla dimensione impostata

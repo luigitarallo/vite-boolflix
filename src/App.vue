@@ -41,6 +41,7 @@ export default {
               original_language,
               vote_average,
               id,
+              poster_path,
             } = movie;
             let flag = this.languageFlags[original_language];
             if (!flag) {
@@ -52,6 +53,7 @@ export default {
               language: flag,
               vote: Math.ceil(vote_average / 2),
               id,
+              cardImage: "https://image.tmdb.org/t/p/w342" + poster_path,
             };
           });
         });
@@ -64,8 +66,14 @@ export default {
         })
         .then((response) => {
           store.series = response.data.results.map((serie) => {
-            const { name, original_name, original_language, vote_average, id } =
-              serie;
+            const {
+              name,
+              original_name,
+              original_language,
+              vote_average,
+              id,
+              poster_path,
+            } = serie;
             let flag = this.languageFlags[original_language];
             if (!flag) {
               flag = "flags/rainbow.png";
@@ -76,6 +84,7 @@ export default {
               language: flag,
               vote: Math.ceil(vote_average / 2),
               id,
+              cardImage: "https://image.tmdb.org/t/p/w342" + poster_path,
             };
           });
         });
