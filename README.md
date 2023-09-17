@@ -95,3 +95,7 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 - Creo un database con le bandiere più comuni per le lingue
 - Dichiaro un oggetto con al suo interno una chiave che sarà la lingua del film e come valore un percorso al database con la bandiera corrispondete
 - Quando interrogo il link per ricevere le informazioni del film, salvo i dati ricevuti in un oggetto, dichiaro una variabile _flag_ che si sostituirà al valore della lingua originale in caso di corrispondenza, **SE** non vi è corrispondenza, inserisco un' immagine di default
+
+- Quando invoco il metodo per ricercare i film, creo un'altra chiamata per ricercare le serie
+- salvo i dati in un secondo array di oggetti nello storage
+- Nell'app _MediaList_ registro un secondo componente _MediaCard_ e **PER OGNI** oggetto nell'array stamperà una card, i dati da stampare li invio tramite la stessa props ma con dati _serie_ differenti

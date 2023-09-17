@@ -13,7 +13,8 @@ export default {
   <div class="card-body">
     <div class="flag-image"><img :src="cardInfo.language" alt="" /></div>
 
-    {{ cardInfo.name }} {{ cardInfo.original_title }} - {{ cardInfo.vote }}
+    {{ cardInfo.name }} {{ cardInfo.original_title }} -
+    {{ cardInfo.vote }}
   </div>
 </template>
 
