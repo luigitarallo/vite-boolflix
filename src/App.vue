@@ -8,11 +8,9 @@ import AppMain from "./components/AppMain.vue";
 const api = "8fa93795453909bcada8baee1989bfa4";
 
 export default {
-  components: { AppHeader, AppMain },
-
-  methods: {
-    fetchMovies(wordsToSearch) {
-      const languageFlags = {
+  data() {
+    return {
+      languageFlags: {
         it: "flags/italy.png",
         en: "flags/united-kingdom.png",
         fr: "flags/france.png",
@@ -21,7 +19,13 @@ export default {
         ja: "flags/japan.png",
         zh: "flags/china.png",
         ud: "flags/rainbow.png",
-      };
+      },
+    };
+  },
+  components: { AppHeader, AppMain },
+
+  methods: {
+    fetchMedia(wordsToSearch) {
       axios
         .get("https://api.themoviedb.org/3/search/movie", {
           params: {
@@ -38,7 +42,7 @@ export default {
               vote_average,
               id,
             } = movie;
-            let flag = languageFlags[original_language];
+            let flag = this.languageFlags[original_language];
             if (!flag) {
               flag = "flags/rainbow.png";
             }
@@ -51,13 +55,37 @@ export default {
             };
           });
         });
+      axios
+        .get("https://api.themoviedb.org/3/search/tv", {
+          params: {
+            query: wordsToSearch,
+            api_key: api,
+          },
+        })
+        .then((response) => {
+          store.series = response.data.results.map((serie) => {
+            const { name, original_name, original_language, vote_average, id } =
+              serie;
+            let flag = this.languageFlags[original_language];
+            if (!flag) {
+              flag = "flags/rainbow.png";
+            }
+            return {
+              name,
+              original_title: original_name,
+              language: flag,
+              vote: Math.ceil(vote_average / 2),
+              id,
+            };
+          });
+        });
     },
   },
 };
 </script>
 
 <template>
-  <AppHeader @search-words="fetchMovies" />
+  <AppHeader @search-words="fetchMedia" />
   <AppMain />
 </template>
 
