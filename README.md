@@ -103,4 +103,12 @@ Replica della più famosa piattaforma streaming di film e serie TV!
 ### Milestone 3
 
 - Per poter stampare la compertina del film o serie tv, aggiungo una nuova chiave all'oggetto che mappo quando faccio la richiesta axios. Questa chiave conterrà il link parziale dell'immagine
-- Quando ritorno l'array con le chiavi cambiate, a quella dell'immagine aggiungo anche l'url rimanente per visualizzare correttamente il file alla dimensione impostata
+- Quando ritorno l'array con le chiavi cambiate, cambio anche quella dell'immagine, aggiungo l'url rimanente dato dalla documentazione e per visualizzare correttamente il file alla dimensione impostata aggiungo anche un valore width all'url
+
+- Installo i pacchetti di font-awesame nel file js principale dopo aver installato i pacchetti necessari
+- Importo l'icona della stella che mi serve
+- Per inserirle nella card
+  - **PER OGNI** voto(numero ottenuto tramite api) aggiungo un'icona stella, così ottengo il voto
+- Per inserire nella card le stelle vuote
+  - **PER OGNI** voto(numero ottenuto tramite api) sottraggo a 5 ed ottengo le stelle vuote
+  - Stilizzo le stelle rendendo colorate quelle corrispondenti al vuoto e nere quelle vuote
