@@ -12,7 +12,10 @@ export default {
 <template>
   <div class="card-body">
     <div class="flag-image"><img :src="cardInfo.language" alt="" /></div>
-    <div class="media-image"><img :src="cardInfo.cardImage" alt="" /></div>
+
+    <div class="media-image">
+      <img :src="cardInfo.cardImage" alt="" />
+    </div>
 
     {{ cardInfo.name }} {{ cardInfo.original_title }} -
     <div class="stars">

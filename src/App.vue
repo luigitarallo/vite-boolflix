@@ -47,6 +47,7 @@ export default {
             if (!flag) {
               flag = "flags/rainbow.png";
             }
+
             return {
               name: title,
               original_title,
