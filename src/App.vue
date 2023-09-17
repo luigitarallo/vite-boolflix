@@ -12,6 +12,16 @@ export default {
 
   methods: {
     fetchMovies(wordsToSearch) {
+      const languageFlags = {
+        it: "flags/italy.png",
+        en: "flags/united-kingdom.png",
+        fr: "flags/france.png",
+        de: "flags/germany.png",
+        pt: "flags/portugal.png",
+        ja: "flags/japan.png",
+        zh: "flags/china.png",
+        ud: "flags/rainbow.png",
+      };
       axios
         .get("https://api.themoviedb.org/3/search/movie", {
           params: {
@@ -28,10 +38,14 @@ export default {
               vote_average,
               id,
             } = movie;
+            let flag = languageFlags[original_language];
+            if (!flag) {
+              flag = "flags/rainbow.png";
+            }
             return {
               name: title,
               original_title,
-              language: original_language,
+              language: flag,
               vote: Math.ceil(vote_average / 2),
               id,
             };
