@@ -13,23 +13,27 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <h2>Film</h2>
-    <MediaCard
-      v-for="movie in store.movies"
-      :key="movie.id"
-      class="card"
-      :cardInfo="movie"
-    />
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3">
+      <MediaCard
+        v-for="movie in store.movies"
+        :key="movie.id"
+        class="card"
+        :cardInfo="movie"
+      />
+    </div>
   </div>
-  <div>
+  <div class="container">
     <h2>Serie TV</h2>
-    <MediaCard
-      v-for="serie in store.series"
-      :key="serie.id"
-      class="card"
-      :cardInfo="serie"
-    />
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3">
+      <MediaCard
+        v-for="serie in store.series"
+        :key="serie.id"
+        class="card"
+        :cardInfo="serie"
+      />
+    </div>
   </div>
 </template>
 
