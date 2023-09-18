@@ -22,31 +22,40 @@ export default {
         </div>
 
         <div class="media-card-info">
-          <h2>Titolo: {{ cardInfo.name }}</h2>
-          <h3>Titolo originale: {{ cardInfo.original_title }}</h3>
-          <span
-            >Lingua:<img
-              :src="cardInfo.language"
-              alt="language"
-              class="flag-image"
-            />
-          </span>
-          <p>{{ cardInfo.overview }}</p>
+          <div class="container-info">
+            <h2><span class="title">Title:</span> {{ cardInfo.name }}</h2>
+            <h3>
+              <span class="original-title">Original Title:</span>
+              {{ cardInfo.original_title }}
+            </h3>
+            <span
+              >Language:<img
+                :src="cardInfo.language"
+                alt="language"
+                class="flag-image"
+              />
+            </span>
+            <p v-if="cardInfo.overview != ''">
+              <span class="trama">Plot:</span> {{ cardInfo.overview }}
+            </p>
+            <p v-else><span class="trama">Plot:</span> Plot not available</p>
 
-          <div class="stars">
-            <font-awesome-icon
-              icon="fa-solid fa-star"
-              v-for="n in cardInfo.vote"
-              :key="cardInfo.id"
-              class="star-full"
-            />
+            <div class="vote">
+              <span>Vote Average:</span>
+              <font-awesome-icon
+                icon="fa-solid fa-star"
+                v-for="n in cardInfo.vote"
+                :key="cardInfo.id"
+                class="star-full"
+              />
 
-            <font-awesome-icon
-              icon="fa-solid fa-star"
-              v-for="n in 5 - cardInfo.vote"
-              :key="cardInfo.id"
-              class="star-empty"
-            />
+              <font-awesome-icon
+                icon="fa-solid fa-star"
+                v-for="n in 5 - cardInfo.vote"
+                :key="cardInfo.id"
+                class="star-empty"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -55,8 +64,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../../assets/scss/general.scss";
-
+@use "../../assets/scss/general.scss" as *;
+@use "../../assets/scss/partials/variables" as *;
 .media-card {
   background-color: transparent;
   perspective: 1000px;
@@ -88,7 +97,7 @@ export default {
     max-width: 100%;
     height: 460px;
     object-fit: cover;
-    border: 1px solid red;
+    border: $brand-color;
     border-radius: 5px;
   }
 }
@@ -98,16 +107,42 @@ export default {
   color: white;
   transform: rotateY(180deg);
   border-radius: 5px;
-  border: 1px solid red;
+  border: 1px solid $brand-color;
+  overflow-y: auto;
+  .container-info {
+    padding: 1rem;
+    h2 {
+      font-size: 1.6rem;
+      .title {
+        color: $brand-color;
+      }
+    }
+    h3 {
+      font-size: 1rem;
+      .original-title {
+        color: $brand-color;
+      }
+    }
+  }
+  .trama {
+    color: $brand-color;
+    font-weight: 900;
+  }
   .flag-image {
     width: 30px;
+    margin-left: 1rem;
   }
 }
 
-.media-card-info .star-full {
-  color: yellow;
-}
-.star-empty {
-  color: white;
+.vote {
+  span {
+    margin-right: 0.5rem;
+  }
+  .star-full {
+    color: $star-full-color;
+  }
+  .star-empty {
+    color: $star-empty-color;
+  }
 }
 </style>
