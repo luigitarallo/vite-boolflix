@@ -19,7 +19,6 @@ export default {
       <MediaCard
         v-for="movie in store.movies"
         :key="movie.id"
-        class="card"
         :cardInfo="movie"
       />
     </div>
@@ -30,7 +29,6 @@ export default {
       <MediaCard
         v-for="serie in store.series"
         :key="serie.id"
-        class="card"
         :cardInfo="serie"
       />
     </div>
