@@ -38,9 +38,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../../assets/scss/general.scss";
+@use "../../assets/scss/general.scss" as *;
+@use "../../assets/scss/partials/variables" as *;
 h2 {
-  color: white;
+  color: $text-color;
   padding: 1rem 0;
 }
 </style>

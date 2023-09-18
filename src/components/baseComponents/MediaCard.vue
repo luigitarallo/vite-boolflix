@@ -36,9 +36,9 @@ export default {
               />
             </span>
             <p v-if="cardInfo.overview != ''">
-              <span class="trama">Plot:</span> {{ cardInfo.overview }}
+              <span class="plot">Plot:</span> {{ cardInfo.overview }}
             </p>
-            <p v-else><span class="trama">Plot:</span> Plot not available</p>
+            <p v-else><span class="plot">Plot:</span> Plot not available</p>
 
             <div class="vote">
               <span>Vote Average:</span>
@@ -104,8 +104,8 @@ export default {
 }
 
 .media-card-info {
-  background-color: black;
-  color: white;
+  background-color: $header-bg;
+  color: $text-color;
   transform: rotateY(180deg);
   border-radius: 5px;
   border: 1px solid $brand-color;
@@ -125,7 +125,7 @@ export default {
       }
     }
   }
-  .trama {
+  .plot {
     color: $brand-color;
     font-weight: 900;
   }
