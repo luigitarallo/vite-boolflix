@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container my-3">
     <section>
       <h2>Film</h2>
       <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3">
