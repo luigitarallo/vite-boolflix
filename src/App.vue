@@ -1,6 +1,10 @@
 <script>
+// Import axios
 import axios from "axios";
+
+// Import reactive data
 import { store } from "./data/store";
+// Import static data
 import {
   api,
   languageFlags,
@@ -9,6 +13,7 @@ import {
   cardImgUrl,
 } from "./data/staticData";
 
+// Import components
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 
@@ -16,7 +21,9 @@ export default {
   components: { AppHeader, AppMain },
 
   methods: {
+    // Method for search therms with api
     fetchMedia(wordsToSearch) {
+      // Call for Movies
       axios
         .get(moviesUrl, {
           params: {
@@ -39,7 +46,7 @@ export default {
             if (!flag) {
               flag = languageFlags.ud;
             }
-
+            // Return Mapped object with custom key and value
             return {
               name: title,
               original_title,
@@ -51,6 +58,7 @@ export default {
             };
           });
         });
+      // Call for Series
       axios
         .get(seriesUrl, {
           params: {
@@ -73,6 +81,8 @@ export default {
             if (!flag) {
               flag = languageFlags.ud;
             }
+            // Return Mapped object with custom key and value
+
             return {
               name,
               original_title: original_name,
@@ -94,6 +104,4 @@ export default {
   <AppMain />
 </template>
 
-<style lang="scss">
-@use "./assets/scss/general.scss";
-</style>
+<style lang="scss"></style>

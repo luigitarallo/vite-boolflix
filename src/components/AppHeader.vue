@@ -5,6 +5,7 @@ export default {
       searched: "",
     };
   },
+  // Regitered emits
   emits: ["search-words"],
 };
 </script>
@@ -14,6 +15,8 @@ export default {
     <div class="container d-flex justify-content-between align-items-center">
       <img src="img/netflix-logo.png" alt="" class="logo" />
       <div class="input-group">
+        <!-- Add v-model on input to get the input text -->
+        <!-- Add v-on keyup.enter to send the input text on button press -->
         <input
           v-model="searched"
           @keyup.enter="$emit('search-words', searched)"
@@ -22,6 +25,7 @@ export default {
           placeholder="Write here"
           aria-describedby="button-addon2"
         />
+        <!-- Add v-on click to send the input text on button press -->
         <button
           @click="$emit('search-words', searched)"
           class="btn btn-outline-danger"

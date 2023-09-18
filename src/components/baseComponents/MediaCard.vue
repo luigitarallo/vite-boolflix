@@ -1,5 +1,6 @@
 <script>
 export default {
+  // Registered props
   props: { cardInfo: Object },
 };
 </script>
@@ -9,15 +10,18 @@ export default {
     <div class="media-card">
       <div class="media-card-content">
         <div class="media-card-img">
+          <!-- Add v-if to show img if exists -->
           <img
             v-if="cardInfo.cardImage != 'https://image.tmdb.org/t/p/w342null'"
             :src="cardInfo.cardImage"
             :alt="cardInfo.name"
           />
+          <!-- Add v-els to show default img if gotten cardImage is null -->
+
           <img
             v-else
             src="public\img\image-not-available.png"
-            alt="generale image"
+            alt="general image"
           />
         </div>
 
@@ -35,20 +39,24 @@ export default {
                 class="flag-image"
               />
             </span>
+            <!-- Add v-if to show overview if exists -->
             <p v-if="cardInfo.overview != ''">
               <span class="plot">Plot:</span> {{ cardInfo.overview }}
             </p>
+            <!-- Add v-else to show default plot if gotten overview is empty -->
             <p v-else><span class="plot">Plot:</span> Plot not available</p>
 
             <div class="vote">
               <span>Vote Average:</span>
+              <!-- Add v-for to print filled star -->
+
               <font-awesome-icon
                 icon="fa-solid fa-star"
                 v-for="n in cardInfo.vote"
                 :key="cardInfo.id"
                 class="star-full"
               />
-
+              <!-- Add v-for to print remaining empty stars -->
               <font-awesome-icon
                 icon="fa-solid fa-star"
                 v-for="n in 5 - cardInfo.vote"
