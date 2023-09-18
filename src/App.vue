@@ -33,6 +33,7 @@ export default {
               vote_average,
               id,
               poster_path,
+              overview,
             } = movie;
             let flag = languageFlags[original_language];
             if (!flag) {
@@ -46,6 +47,7 @@ export default {
               vote: Math.ceil(vote_average / 2),
               id,
               cardImage: cardImgUrl + poster_path,
+              overview,
             };
           });
         });
@@ -65,6 +67,7 @@ export default {
               vote_average,
               id,
               poster_path,
+              overview,
             } = serie;
             let flag = languageFlags[original_language];
             if (!flag) {
@@ -77,6 +80,7 @@ export default {
               vote: Math.ceil(vote_average / 2),
               id,
               cardImage: cardImgUrl + poster_path,
+              overview,
             };
           });
         });
