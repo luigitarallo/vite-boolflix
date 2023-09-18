@@ -1,33 +1,24 @@
 <script>
 import axios from "axios";
 import { store } from "./data/store";
+import {
+  api,
+  languageFlags,
+  moviesUrl,
+  seriesUrl,
+  cardImgUrl,
+} from "./data/staticData";
 
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 
-const api = "8fa93795453909bcada8baee1989bfa4";
-
 export default {
-  data() {
-    return {
-      languageFlags: {
-        it: "flags/italy.png",
-        en: "flags/united-kingdom.png",
-        fr: "flags/france.png",
-        de: "flags/germany.png",
-        pt: "flags/portugal.png",
-        ja: "flags/japan.png",
-        zh: "flags/china.png",
-        ud: "flags/rainbow.png",
-      },
-    };
-  },
   components: { AppHeader, AppMain },
 
   methods: {
     fetchMedia(wordsToSearch) {
       axios
-        .get("https://api.themoviedb.org/3/search/movie", {
+        .get(moviesUrl, {
           params: {
             query: wordsToSearch,
             api_key: api,
@@ -43,9 +34,9 @@ export default {
               id,
               poster_path,
             } = movie;
-            let flag = this.languageFlags[original_language];
+            let flag = languageFlags[original_language];
             if (!flag) {
-              flag = "flags/rainbow.png";
+              flag = languageFlags.ud;
             }
 
             return {
@@ -54,12 +45,12 @@ export default {
               language: flag,
               vote: Math.ceil(vote_average / 2),
               id,
-              cardImage: "https://image.tmdb.org/t/p/w342" + poster_path,
+              cardImage: cardImgUrl + poster_path,
             };
           });
         });
       axios
-        .get("https://api.themoviedb.org/3/search/tv", {
+        .get(seriesUrl, {
           params: {
             query: wordsToSearch,
             api_key: api,
@@ -75,9 +66,9 @@ export default {
               id,
               poster_path,
             } = serie;
-            let flag = this.languageFlags[original_language];
+            let flag = languageFlags[original_language];
             if (!flag) {
-              flag = "flags/rainbow.png";
+              flag = languageFlags.ud;
             }
             return {
               name,
@@ -85,7 +76,7 @@ export default {
               language: flag,
               vote: Math.ceil(vote_average / 2),
               id,
-              cardImage: "https://image.tmdb.org/t/p/w342" + poster_path,
+              cardImage: cardImgUrl + poster_path,
             };
           });
         });
