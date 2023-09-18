@@ -99,6 +99,7 @@ export default {
     object-fit: cover;
     border: $brand-color;
     border-radius: 5px;
+    border: 1px solid $brand-color;
   }
 }
 
