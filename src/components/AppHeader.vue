@@ -19,16 +19,16 @@ export default {
           @keyup.enter="$emit('search-words', searched)"
           type="text"
           class="form-control"
-          placeholder="Scrivi qui"
+          placeholder="Write here"
           aria-describedby="button-addon2"
         />
         <button
           @click="$emit('search-words', searched)"
-          class="btn btn-outline-secondary"
+          class="btn btn-outline-danger"
           type="button"
           id="button-addon2"
         >
-          Cerca qualcosa
+          Search something
         </button>
       </div>
     </div>
@@ -36,8 +36,11 @@ export default {
 </template>
 
 <style lang="scss">
+@use "../assets/scss/general.scss" as *;
+@use "../assets/scss/partials/variables" as *;
+
 header {
-  background-color: black;
+  background-color: $header-bg;
   padding: 1rem 1rem;
   .logo {
     width: 15%;
