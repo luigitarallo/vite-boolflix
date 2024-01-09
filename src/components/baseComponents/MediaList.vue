@@ -18,26 +18,34 @@ export default {
 <template>
   <div class="container my-3">
     <section>
-      <h2>Film</h2>
-      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3">
+      <h2>Movies</h2>
+      <div
+        v-if="this.store.movies.length > 0"
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3"
+      >
         <!-- Add for cycle for print movie MediaCard -->
         <MediaCard
-          v-for="movie in store.movies"
+          v-for="movie in this.store.movies"
           :key="movie.id"
           :cardInfo="movie"
         />
       </div>
+      <h4 v-else>No results found</h4>
     </section>
     <section>
-      <h2>Serie TV</h2>
-      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3">
+      <h2>TV Series</h2>
+      <div
+        v-if="this.store.series.length > 0"
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3"
+      >
         <!-- Add for cycle for print serie MediaCard -->
         <MediaCard
-          v-for="serie in store.series"
+          v-for="serie in this.store.series"
           :key="serie.id"
           :cardInfo="serie"
         />
       </div>
+      <h4 v-else>No results found</h4>
     </section>
   </div>
 </template>
@@ -49,5 +57,10 @@ export default {
 h2 {
   color: $text-color;
   padding: 1rem 0;
+}
+
+h4 {
+  color: $text-color;
+  text-align: center;
 }
 </style>
