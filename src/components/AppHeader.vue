@@ -22,7 +22,7 @@ export default {
           @keyup.enter="$emit('search-words', searched)"
           type="text"
           class="form-control"
-          placeholder="Write here"
+          placeholder="Search something"
           aria-describedby="button-addon2"
         />
         <!-- Add v-on click to send the input text on button press -->
@@ -32,7 +32,7 @@ export default {
           type="button"
           id="button-addon2"
         >
-          Search something
+          Search
         </button>
       </div>
     </div>
@@ -52,6 +52,17 @@ header {
   }
   .input-group {
     width: 30%;
+  }
+  @media screen and (max-width: 992px) {
+    .input-group {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .input-group {
+      width: 80%;
+    }
   }
 }
 </style>
