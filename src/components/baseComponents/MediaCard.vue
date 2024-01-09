@@ -154,4 +154,25 @@ export default {
     color: $star-empty-color;
   }
 }
+
+// Scrollbar
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $brand-color;
+  border-radius: 10px;
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 10px;
+}
 </style>
