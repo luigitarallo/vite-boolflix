@@ -60,7 +60,7 @@ h2 {
 }
 
 h4 {
-  color: $text-color;
+  color: $brand-color;
   text-align: center;
 }
 </style>
