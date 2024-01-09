@@ -104,4 +104,28 @@ export default {
   <AppMain />
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+@use "./assets/scss/general.scss" as *;
+@use "./assets/scss/partials/variables" as *;
+
+// Custom Scrollbar
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $brand-color;
+  border-radius: 10px;
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 10px;
+}
+</style>
