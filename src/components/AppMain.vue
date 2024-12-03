@@ -1,5 +1,5 @@
 <script>
-import Medialist from "./baseComponents/Medialist.vue";
+import Medialist from "./baseComponents/MediaList.vue";
 export default {
   data() {
     return {};
