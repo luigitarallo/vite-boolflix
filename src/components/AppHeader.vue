@@ -13,7 +13,7 @@ export default {
 <template>
   <header>
     <div class="container d-flex justify-content-between align-items-center">
-      <img src="img/netflix-logo.png" alt="" class="logo" />
+      <img src="/img/netflix-logo.png" alt="" class="logo" />
       <div class="input-group">
         <!-- Add v-model on input to get the input text -->
         <!-- Add v-on keyup.enter to send the input text on button press -->

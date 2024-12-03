@@ -18,11 +18,7 @@ export default {
           />
           <!-- Add v-els to show default img if gotten cardImage is null -->
 
-          <img
-            v-else
-            src="public\img\image-not-available.png"
-            alt="general image"
-          />
+          <img v-else src="/img/image-not-available.png" alt="general image" />
         </div>
 
         <div class="media-card-info">
