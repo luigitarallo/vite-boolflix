@@ -36,7 +36,7 @@ export default {
       <h2>TV Series</h2>
       <div
         v-if="this.store.series.length > 0"
-        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-3"
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-3"
       >
         <!-- Add for cycle for print serie MediaCard -->
         <MediaCard
