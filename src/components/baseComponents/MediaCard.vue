@@ -98,7 +98,7 @@ export default {
   object-fit: cover;
 
   img {
-    max-width: 100%;
+    width: 100%;
     height: 460px;
     object-fit: cover;
     border: $brand-color;
