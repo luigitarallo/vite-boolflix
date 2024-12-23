@@ -15,14 +15,22 @@ import {
 
 // Import components
 import AppHeader from "./components/AppHeader.vue";
-import AppMain from "./components/AppMain.vue";
+import MediaList from "./components/baseComponents/MediaList.vue";
 
 export default {
-  components: { AppHeader, AppMain },
+  components: { AppHeader, MediaList },
+  data() {
+    return {
+      searchPerformed: false,
+    };
+  },
 
   methods: {
     // Method for search therms with api
     fetchMedia(wordsToSearch) {
+      if (!wordsToSearch.trim()) return;
+
+      this.searchPerformed = true;
       // Call for Movies
       axios
         .get(moviesUrl, {
@@ -101,7 +109,7 @@ export default {
 
 <template>
   <AppHeader @search-words="fetchMedia" />
-  <AppMain />
+  <MediaList :searchPerformed="searchPerformed" />
 </template>
 
 <style lang="scss">

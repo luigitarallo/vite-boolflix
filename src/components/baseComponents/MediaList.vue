@@ -6,6 +6,12 @@ import { store } from "../../data/store";
 import MediaCard from "./MediaCard.vue";
 
 export default {
+  props: {
+    searchPerformed: {
+      type: Boolean,
+      required: true,
+    },
+  },
   data() {
     return {
       store,
@@ -20,17 +26,18 @@ export default {
     <section>
       <h2>Movies</h2>
       <div
-        v-if="this.store.movies.length > 0"
+        v-if="searchPerformed && store.movies.length > 0"
         class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-3"
       >
         <!-- Add for cycle for print movie MediaCard -->
         <MediaCard
-          v-for="movie in this.store.movies"
+          v-for="movie in store.movies"
           :key="movie.id"
           :cardInfo="movie"
         />
       </div>
-      <h4 v-else>No results found</h4>
+      <h4 v-else-if="searchPerformed">No results found</h4>
+      <h4 v-else>Search something</h4>
     </section>
     <section>
       <h2>TV Series</h2>
@@ -45,7 +52,8 @@ export default {
           :cardInfo="serie"
         />
       </div>
-      <h4 v-else>No results found</h4>
+      <h4 v-else-if="searchPerformed">No results found</h4>
+      <h4 v-else>Search something</h4>
     </section>
   </div>
 </template>
